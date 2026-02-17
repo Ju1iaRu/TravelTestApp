@@ -66,6 +66,10 @@ class DetailsFragment : Fragment() {
         activity.supportActionBar?.title = title
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setTitleTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+        // Make back arrow (navigation icon) white on city detail screens
+        binding.toolbar.navigationIcon?.setTint(
+            ContextCompat.getColor(requireContext(), R.color.white)
+        )
         binding.toolbar.setNavigationOnClickListener {
             parentFragmentManager.popBackStack()
         }
@@ -74,8 +78,8 @@ class DetailsFragment : Fragment() {
     private fun displayAttractionDetails(attraction: com.app.travelactivity.models.Attraction) {
         binding.textViewAttractionName.text = attraction.name
         binding.textViewAttractionDescription.text = attraction.description
-        // For now, we'll use a placeholder. In a real app, you'd load images from resources or URLs
-        binding.imageViewAttraction.setImageResource(R.drawable.ic_launcher_foreground)
+        // Show the specific image for this city
+        binding.imageViewAttraction.setImageResource(attraction.imageResId)
     }
 
     override fun onDestroyView() {

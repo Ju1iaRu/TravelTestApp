@@ -2,6 +2,7 @@ package com.app.travelactivity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.travelactivity.databinding.ActivityLoginBinding
@@ -36,6 +37,8 @@ class LoginActivity : AppCompatActivity() {
             if (preferencesHelper.login(username, password)) {
                 navigateToMain()
             } else {
+                // Log an error when login or password is incorrect
+                Log.e("LoginActivity", "Login failed for user='$username': invalid username or password")
                 Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
             }
         }
