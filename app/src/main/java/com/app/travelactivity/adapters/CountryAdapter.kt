@@ -28,8 +28,8 @@ class CountryAdapter(
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
         val country = countries[position]
         holder.textViewName.text = country.name
-        // For now, we'll use a placeholder. In a real app, you'd load images from resources or URLs
-        holder.imageView.setImageResource(R.drawable.ic_launcher_foreground)
+        // Use the country's image resource (e.g. Vietnam flag)
+        holder.imageView.setImageResource(country.imageResId)
         
         holder.itemView.setOnClickListener {
             onCountryClick(country)
