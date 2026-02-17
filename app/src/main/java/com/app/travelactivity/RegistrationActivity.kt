@@ -2,6 +2,7 @@ package com.app.travelactivity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.travelactivity.databinding.ActivityRegistrationBinding
@@ -23,7 +24,28 @@ class RegistrationActivity : AppCompatActivity() {
             val password = binding.editTextPassword.text.toString().trim()
             val confirmPassword = binding.editTextConfirmPassword.text.toString().trim()
 
-            if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            // Clear previous errors
+            binding.usernameInputLayout.error = null
+            binding.passwordInputLayout.error = null
+            binding.confirmPasswordInputLayout.error = null
+
+            var hasEmptyField = false
+
+            if (username.isEmpty()) {
+                binding.usernameInputLayout.error = "The field can't be empty"
+                hasEmptyField = true
+            }
+            if (password.isEmpty()) {
+                binding.passwordInputLayout.error = "The field can't be empty"
+                hasEmptyField = true
+            }
+            if (confirmPassword.isEmpty()) {
+                binding.confirmPasswordInputLayout.error = "The field can't be empty"
+                hasEmptyField = true
+            }
+
+            if (hasEmptyField) {
+                Log.e("RegistrationActivity", "Registration failed: one or more fields are empty")
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
