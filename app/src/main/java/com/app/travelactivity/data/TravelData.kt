@@ -9,25 +9,37 @@ object TravelData {
         Country(
             id = 1,
             name = "Vietnam",
-            imageResId = R.drawable.vietnam_flag, // We'll create placeholder drawables
+            imageResId = R.drawable.vietnam_flag,
             attractions = listOf(
                 Attraction(
                     id = 1,
-                    name = "Ha Long Bay",
-                    description = "Ha Long Bay is a UNESCO World Heritage Site and popular travel destination in Quảng Ninh Province, Vietnam. The bay features thousands of limestone karsts and isles in various shapes and sizes. The bay is a center of a larger zone which includes Bái Tử Long Bay to the northeast, and Cát Bà Island to the southwest.",
-                    imageResId = R.drawable.ha_long_bay
+                    name = "Ho Chi Minh City",
+                    description = "Ho Chi Minh City, formerly Saigon, is Vietnam's largest city. It is known for its vibrant street life, historic French colonial architecture, and landmarks such as Notre-Dame Cathedral and the Central Post Office.",
+                    imageResId = R.drawable.ho_chi_minh
                 ),
                 Attraction(
                     id = 2,
-                    name = "Hoi An Ancient Town",
-                    description = "Hoi An Ancient Town is an exceptionally well-preserved example of a Southeast Asian trading port dating from the 15th to the 19th century. Its buildings and its street plan reflect the influences, both indigenous and foreign, that have combined to produce this unique heritage site.",
-                    imageResId = R.drawable.hoi_an
+                    name = "Hanoi",
+                    description = "Hanoi is the capital of Vietnam, famous for its centuries-old architecture, narrow Old Quarter streets, and rich culture blending Southeast Asian, Chinese, and French influences.",
+                    imageResId = R.drawable.hanoi
                 ),
                 Attraction(
                     id = 3,
-                    name = "Ho Chi Minh City",
-                    description = "Ho Chi Minh City, formerly known as Saigon, is the largest city in Vietnam. It's known for its French colonial landmarks, including Notre-Dame Cathedral, made entirely of materials imported from France, and the 19th-century Central Post Office.",
-                    imageResId = R.drawable.ho_chi_minh
+                    name = "Nha Trang",
+                    description = "Nha Trang is a coastal city known for its beautiful beaches, clear waters, and nearby islands, making it one of Vietnam's most popular seaside destinations.",
+                    imageResId = R.drawable.nha_trang
+                ),
+                Attraction(
+                    id = 4,
+                    name = "Da Nang",
+                    description = "Da Nang is a modern coastal city in central Vietnam, known for its long sandy beaches, the Marble Mountains, and the famous Golden Bridge held by giant stone hands.",
+                    imageResId = R.drawable.da_nang
+                ),
+                Attraction(
+                    id = 5,
+                    name = "Phu Quoc",
+                    description = "Phu Quoc is a tropical island off the coast of Vietnam, famous for its white-sand beaches, clear waters, and relaxed island atmosphere.",
+                    imageResId = R.drawable.phu_quoc
                 )
             )
         )

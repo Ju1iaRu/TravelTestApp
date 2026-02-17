@@ -28,8 +28,8 @@ class AttractionAdapter(
     override fun onBindViewHolder(holder: AttractionViewHolder, position: Int) {
         val attraction = attractions[position]
         holder.textViewName.text = attraction.name
-        // For now, we'll use a placeholder. In a real app, you'd load images from resources or URLs
-        holder.imageView.setImageResource(R.drawable.ic_launcher_foreground)
+        // Use the attraction's specific image resource
+        holder.imageView.setImageResource(attraction.imageResId)
         
         holder.itemView.setOnClickListener {
             onAttractionClick(attraction)
