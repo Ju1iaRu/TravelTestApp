@@ -5,16 +5,8 @@
         android:icon="@drawable/ic_travel"
         android:title="Travel" />
     <item
-        android:id="@+id/navigation_details"
-        android:icon="@drawable/ic_details"
-        android:title="Details" />
-    <item
-        android:id="@+id/navigation_add"
-        android:icon="@drawable/icon_add"
-        android:title="Add" />
-    <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_profile"
-        android:title="Profile" />
+        android:title="Settings" />
 
 </menu>

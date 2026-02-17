@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.travelactivity.R
+import com.app.travelactivity.adapters.CountryAdapter
+import com.app.travelactivity.data.TravelData
 import com.app.travelactivity.databinding.FragmentTravelBinding
 
 class TravelFragment : Fragment() {
@@ -25,16 +28,29 @@ class TravelFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupToolbar("My Travels")
+        setupToolbar("Select Country")
+        setupRecyclerView()
     }
 
     private fun setupToolbar(title: String) {
         val activity = requireActivity() as AppCompatActivity
         activity.setSupportActionBar(binding.toolbar)
-        // Установка заголовка
         activity.supportActionBar?.title = title
-        // Установка цвета текста
         binding.toolbar.setTitleTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+    }
+
+    private fun setupRecyclerView() {
+        val adapter = CountryAdapter(TravelData.countries) { country ->
+            // Navigate to attractions fragment
+            val attractionsFragment = AttractionsFragment.newInstance(country.id)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, attractionsFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+        
+        binding.recyclerViewTravel.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewTravel.adapter = adapter
     }
 
     override fun onDestroyView() {
