@@ -59,6 +59,10 @@ class AttractionsFragment : Fragment() {
         activity.supportActionBar?.title = title
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setTitleTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+        // Make back arrow (navigation icon) white
+        binding.toolbar.navigationIcon?.setTint(
+            ContextCompat.getColor(requireContext(), R.color.white)
+        )
         binding.toolbar.setNavigationOnClickListener {
             parentFragmentManager.popBackStack()
         }

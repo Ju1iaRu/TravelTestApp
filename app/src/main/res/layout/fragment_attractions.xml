@@ -13,10 +13,19 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+    <!-- Vietnam header image below the toolbar -->
+    <ImageView
+        android:id="@+id/imageViewCountryHeader"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/toolbar"
+        android:scaleType="centerCrop"
+        android:src="@drawable/vietnam_flag" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewAttractions"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"/>
+        android:layout_below="@id/imageViewCountryHeader"/>
 
 </RelativeLayout>
