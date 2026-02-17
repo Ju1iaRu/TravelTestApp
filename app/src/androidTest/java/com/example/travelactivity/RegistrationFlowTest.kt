@@ -9,8 +9,6 @@ import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import com.app.travelactivity.R
-import com.app.travelactivity.LoginActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -22,7 +20,7 @@ class RegistrationFlowTest {
     val activityRule = ActivityScenarioRule(LoginActivity::class.java)
 
     @Test
-    fun successfulRegistration_opensLoginScreen() {
+    fun successfulRegistration() {
         val username = "user_${System.currentTimeMillis()}"
 
         // Open the Create Account screen
