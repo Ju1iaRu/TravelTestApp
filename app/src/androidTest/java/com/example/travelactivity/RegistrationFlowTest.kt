@@ -23,7 +23,6 @@ class RegistrationFlowTest {
 
     @Test
     fun successfulRegistration_opensLoginScreen() {
-        // Use a unique username so the test works even if it runs multiple times
         val username = "user_${System.currentTimeMillis()}"
 
         // Open the Create Account screen
@@ -44,10 +43,8 @@ class RegistrationFlowTest {
         onView(withId(R.id.buttonRegister))
             .perform(click())
 
-        // After successful registration, the RegistrationActivity finishes
-        // and the Login screen should be visible again.
+        // the Login screen should be visible
         onView(withId(R.id.buttonLogin))
             .check(matches(isDisplayed()))
     }
 }
-
